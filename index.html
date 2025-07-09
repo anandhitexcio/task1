@@ -102,6 +102,10 @@
     <div class="input-group">
       <label for="password">Enter Password:</label>
       <input type="password" id="password" placeholder="Type a password..." />
+        <label>
+    <input type="checkbox" onclick="toggleVisibility()" />
+    Show Password
+    </label>
       <div id="strength-meter"></div>
       <p id="strength-text">Strength: </p>
     </div>
@@ -207,6 +211,11 @@
       body.classList.toggle("dark");
       body.classList.remove(body.classList.contains("dark") ? "light" : "dark");
     }
+    function toggleVisibility() {
+      const pwdField = document.getElementById("password");
+      pwdField.type = pwdField.type === "password" ? "text" : "password";
+    }
+
   </script>
 </body>
 </html>
